@@ -1,0 +1,99 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background-image: url("images/bg-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  background-color: #003039;
+  font-family: 'Raleway', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "fylo"
+  "storage"
+  "gb_left";
+  place-items: center;
+  grid-gap: 10px;
+  color: rgb(221, 221, 221);
+  
+  
+}
+
+#storage,
+#fylo {
+  background-color: #1d2b68;
+  grid-column: 1 / 4;
+  border-radius: 10px;
+  width: 90%;
+}
+
+#fylo {
+  border-top-right-radius: 75px;
+  padding-block: 40px;
+  grid-area: fylo;
+}
+
+#storage {
+  text-align: center;
+  display: grid;
+  grid-area: storage;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  ". used ."
+  "gb1 . gb2";
+}
+
+#logo, #document {
+  margin-left: 30px;
+}
+
+.icons {
+  padding: 10px;
+  background-color: #0c112e;
+  border-radius: 10px;
+}
+
+#gb {
+  font-weight: 700;
+}
+
+#gb-left {
+  background-color: white;
+  color: rgb(114, 114, 114);
+  text-align: center;
+  padding-block: 16px;
+  padding-inline: 16px;
+  border-radius: 6px;
+  grid-area: gb_left;
+  transform: translateY(-100px);
+}
+
+#number-left {
+  font-weight: 700;
+  color: black;
+}
+
+#used {
+  grid-area: used;
+}
+
+#gb1 {
+  grid-area: gb1;
+}
+
+#gb2 {
+  grid-area: gb2;
+}
