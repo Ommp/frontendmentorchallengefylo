@@ -48,11 +48,12 @@ body {
 #storage {
   text-align: center;
   display: grid;
+  min-height: 200px;
   grid-area: storage;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-areas: 
-  ". used ."
+  "used used used"
+  "bar bar bar"
   "gb1 . gb2";
 }
 
