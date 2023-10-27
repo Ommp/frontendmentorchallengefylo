@@ -27,13 +27,13 @@ body {
   place-items: center;
   grid-gap: 10px;
   color: rgb(221, 221, 221);
-  
+  /* max-width: 300px; */
   
 }
 
 #storage,
 #fylo {
-  background-color: #1d2b68;
+  background-color: hsl(228, 56%, 26%);
   grid-column: 1 / 4;
   border-radius: 10px;
   width: 90%;
@@ -52,6 +52,7 @@ body {
   grid-area: storage;
   /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-areas: 
+  ". . ."
   "used used used"
   "bar bar bar"
   "gb1 . gb2";
@@ -61,10 +62,19 @@ body {
   margin-left: 30px;
 }
 
+
+/* TODO Fix icon background/padding size so that they all have equal heights and widths without messing up the icons themselves*/
 .icons {
+  display: flex;
+  margin-block: 20px;
+  flex-direction: row;
+}
+
+.icon {
   padding: 10px;
   background-color: #0c112e;
   border-radius: 10px;
+  margin-inline: 5px;
 }
 
 #gb {
@@ -75,16 +85,18 @@ body {
   background-color: white;
   color: rgb(114, 114, 114);
   text-align: center;
-  padding-block: 16px;
-  padding-inline: 16px;
+  padding-block: 8px;
+  padding-inline: 24px;
   border-radius: 6px;
   grid-area: gb_left;
   transform: translateY(-100px);
+  text-transform: uppercase;
 }
 
 #number-left {
   font-weight: 700;
   color: black;
+  font-size: 24px;
 }
 
 #used {
@@ -97,4 +109,11 @@ body {
 
 #gb2 {
   grid-area: gb2;
+}
+
+#used-bar {
+  grid-area: bar;
+  background-color: hsl(229, 57%, 11%);
+  margin-inline: 10px;
+  border-radius: 20px;
 }

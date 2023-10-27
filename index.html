@@ -15,9 +15,12 @@
     <title>Frontend Mentor | Fylo data storage component</title>
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style></style>
   </head>
@@ -25,23 +28,29 @@
     <div class="grid-container">
       <div id="fylo">
         <img src="images/logo.svg" alt="" id="logo" />
-        <br />
-        <img
-          src="images/icon-document.svg"
-          alt="document"
-          class="icons"
-          id="document"
-        />
-        <a href=""
-          ><img src="images/icon-folder.svg" alt="folder" class="icons"
-        /></a>
-        <a href=""
-          ><img src="images/icon-upload.svg" alt="upload" class="icons"
-        /></a>
+
+
+<div class="icons">
+  
+      <img
+        src="images/icon-document.svg"
+        alt="document"
+        class="icon"
+        id="document"
+      />
+      <img src="images/icon-folder.svg" alt="folder" class="icon"
+    />
+      <img src="images/icon-upload.svg" alt="upload" class="icon"
+    />
+</div>
+
+
       </div>
 
       <div id="storage">
         <p id="used">You’ve used <span id="gb">815 GB</span> of your storage</p>
+
+        <div id="used-bar"></div>
 
         <p id="gb1">0 GB</p>
         <p id="gb2">1000 GB</p>
