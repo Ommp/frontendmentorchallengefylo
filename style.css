@@ -13,28 +13,23 @@ body {
   background-size: cover;
   font-size: 14px;
   background-color: #003039;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
-
+/* TODO Make the columns have the same width on mobile */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
-  "fylo"
-  "storage"
-  "gb_left";
+  grid-template-areas:
+    "fylo"
+    "storage"
+    "gb_left";
   place-items: center;
-  grid-gap: 10px;
   color: rgb(221, 221, 221);
-  /* max-width: 300px; */
-  
 }
 
 #storage,
 #fylo {
   background-color: hsl(228, 56%, 26%);
-  grid-column: 1 / 4;
   border-radius: 10px;
   width: 90%;
 }
@@ -42,6 +37,7 @@ body {
 #fylo {
   border-top-right-radius: 75px;
   padding-block: 40px;
+  padding-left: 10px;
   grid-area: fylo;
 }
 
@@ -50,18 +46,16 @@ body {
   display: grid;
   min-height: 200px;
   grid-area: storage;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-areas: 
-  ". . ."
-  "used used used"
-  "bar bar bar"
-  "gb1 . gb2";
+  grid-template-areas:
+    "used used used"
+    "bar bar bar"
+    "gb1 . gb2";
 }
 
-#logo, #document {
+#logo,
+#document {
   margin-left: 30px;
 }
-
 
 /* TODO Fix icon background/padding size so that they all have equal heights and widths without messing up the icons themselves*/
 .icons {
@@ -74,7 +68,7 @@ body {
   padding: 10px;
   background-color: #0c112e;
   border-radius: 10px;
-  margin-inline: 5px;
+  margin-inline-start: 10px;
 }
 
 #gb {
@@ -122,12 +116,44 @@ body {
 }
 
 #used-bar {
-  /* background: linear-gradient(hsl(6, 100%, 80%) red);
-   */
-   /* background: linear-gradient(to right (hsl(6, 100%, 80%)), (hsl(335, 100%, 65%))); */
-   background-image: linear-gradient(to right, hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
-   height: 100%;
-   width: 81.5%;
-   border-radius: 20px;
-  
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  height: 100%;
+  width: 81.5%;
+  border-radius: 20px;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url("images/bg-desktop.png");
+  }
+/* TODO make the fylo column slightly longer in the y-axis than the storage column */
+/* TODO make the bottom of the columns end at the same height */
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      ". . . gb_left ."
+      ". fylo storage storage .";
+  }
+
+  #storage {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    "used used ."
+    "bar bar bar"
+    "gb1 . gb2";
+  }
+
+  #fylo {
+    min-width: 300px;
+  }
+
+  #gb-left {
+    transform: translateY(6em);
+  }
 }
